@@ -278,7 +278,7 @@ scanAgain:
 				saveFormula[u]= j;	  //Assign the formula for saveFormula[u]
 				u++;
 			}else if(factor_position==2 && j==1){
-				if(value[pos::alpha]==0 || value[pos::delta]==0){//chi tinh goc bang formula 1 khi mot trong hai goc con lai(hoac ca hai) chua co gia tri
+				if(value[pos::alpha]==0 || value[pos::delta]==0){
 					double sinbeta = (double)(sin(value[pos::alpha]*PI/180)*value[pos::b])/value[pos::a];
 					value[factor_position] = asin(abs(sinbeta)) * 180.0 / PI;
 					MarkFormulas(factor_position); //After finding the factor, activate the related formula
@@ -286,10 +286,10 @@ scanAgain:
 					saveFormula[u]= j;	  //Assign the formula for saveFormula[u]
 					u++;
 				}
-			}else if(factor_position==1 && j==1){//chi tinh goc bang formula 1 khi mot trong hai goc con lai(hoac ca hai) chua co gia tri
+			}else if(factor_position==1 && j==1){
 				if(value[pos::beta]==0 || value[pos::delta]==0){
-					double sinaplha = (double)(sin(value[pos::beta]*PI/180)*value[pos::a])/value[pos::b];
-					value[factor_position] = asin(abs(sinaplha)) * 180.0 / PI;
+					double sinalpha = (double)(sin(value[pos::beta]*PI/180)*value[pos::a])/value[pos::b];
+					value[factor_position] = asin(abs(sinalpha)) * 180.0 / PI;
 					MarkFormulas(factor_position); //After finding the factor, activate the related formula
 					savePosition[u] = factor_position; //Assign the position for savePosition[u]
 					saveFormula[u]= j;	  //Assign the formula for saveFormula[u]
@@ -311,7 +311,7 @@ scanAgain:
 				savePosition[u] = factor_position; //Assign the position for savePosition[u]
 				saveFormula[u]= j;	  //Assign the formula for saveFormula[u]
 				u++;
-			}else if(factor_position==3 && j==2){//chi tinh goc bang formula 2 khi mot trong hai goc con lai(hoac ca hai) chua co gia tri
+			}else if(factor_position==3 && j==2){
 				if(value[pos::beta]==0 || value[pos::alpha]==0){
 					double sindelta = (sin(value[pos::beta]*PI/180)*value[pos::c])/value[pos::b];
 					value[factor_position] = asin(abs(sindelta)) * 180/ PI;
@@ -320,7 +320,7 @@ scanAgain:
 					saveFormula[u]= j;	  //Assign the formula for saveFormula[u]
 					u++;
 				}
-			}else if(factor_position==2 && j==2){//chi tinh goc bang formula 2 khi mot trong hai goc con lai(hoac ca hai) chua co gia tri
+			}else if(factor_position==2 && j==2){
 				if(value[pos::alpha]==0 || value[pos::delta]==0){
 					double sinbeta = (sin(value[pos::delta]*PI/180)*value[pos::b])/value[pos::c];
 					value[factor_position] = asin(abs(sinbeta)) * 180/ PI;
