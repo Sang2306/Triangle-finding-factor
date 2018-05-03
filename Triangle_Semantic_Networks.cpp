@@ -30,37 +30,37 @@ void drawRect(Point topLeft, Point bottomRight);
 int SelectionMenu(string Index[], int number_Of_Items, int x0, int y0, int x1, int y1);//menu to input value for a factor was knew of triangle
 constexpr int ft = 14;
 constexpr int fm = 10;
-int matrix[ft][10] = {{0}};		//matrix ft-1 triangle's factor, 10 formula
-int factor[ft-1] = {0};			//we have ft-1 factors and 0 represent for a unknown factor, 1 reverse
-double value[ft-1] = {0};		//we have ft-1 factors each factor has its own value
+int matrix[ft][10] = {{0}};	//matrix ft-1 triangle's factor, 10 formula
+int factor[ft-1] = {0};		//we have ft-1 factors and 0 represent for a unknown factor, 1 reverse
+double value[ft-1] = {0};	//we have ft-1 factors each factor has its own value
 int savePosition[ft-1] = {0};	//save position of a factor which was found inorder
 int saveFormula[ft-1] = {0};	//save formula number of a factor which was found inorder
 string factorName[ft] = {		//make a menu for inputting
 	"Alpha", "Beta", "Delta", "a", "b", "c", "S", "hc", "p", "hb", "ha", "R", "r", "DONE"
 };
-enum pos{						//every factor should be assigned position corresponds
+enum pos{				//every factor should be assigned position corresponds
 	alpha = 1, beta = 2, delta = 3, a = 4, b = 5, c = 6, S = 7, hc = 8, p = 9, hb = 10, ha = 11, R = 12, r = 13
 };
 void InitAdjacencyMatrix();
 void MarkFormulas(int factor_position);
 void GiveKnownFactor();
 void Instruction(int fml);
-void Answer(int u, int v);		//The answer of factor u with formula v
+void Answer(int u, int v);	//The answer of factor u with formula v
 void Formula(int u);
 /*each formula store its factors*/
 int Formula_1[4] = {1,2,4,5};	//1,2,4,5 - alpha, beta, a, b belong to formula 1
 int Formula_2[4] = {2,3,5,6};	//2,3,5,6 - beta, beta, b, c belong to formula 2
 int Formula_3[5] = {4,5,6,7,9};	//4,5,6,7,9 - a, b, c, S, p belong to formula 3
-int Formula_4[3] = {1,2,3};		//1,2,3 - alpha, beta, delta belong to formula 4
+int Formula_4[3] = {1,2,3};	//1,2,3 - alpha, beta, delta belong to formula 4
 int Formula_5[5] = {4,5,6,7,12};//4,5,6,7,12 - a, b, c, S, R belong to formula 5
 int Formula_6[4] = {4,5,6,9};	//4,5,6,9 - a, b, c, p belong to formula 6
 int Formula_7[3] = {7,9,13};	//7,9,13 - S, p, r belong to formula 7
 int Formula_8[3] = {5,7,10};	//5,7,10- b, S, hb belong to formula 8
-int Formula_9[3] = {6,7,8};		//6,7,8 - c, S, hc belong to formula 9
+int Formula_9[3] = {6,7,8};	//6,7,8 - c, S, hc belong to formula 9
 int Formula_10[3] = {4,7,11};	//4,7,11 - a, S, ha belong to formula 10
-int flag = 1;					//1 factor we need was found, 0 reverse
-int factorNeeded;				//position of factor we need
-int fml;						//go to line 542
+int flag = 1;			//1 factor we need was found, 0 reverse
+int factorNeeded;		//position of factor we need
+int fml;			//go to line 542
 int main(){
 	Print_at(30, 1, "APPLYING SEMANTIC NETWORKS TO FIND RIANGLE'S FACTORS");
 	InitAdjacencyMatrix();
