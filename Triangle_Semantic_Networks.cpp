@@ -28,17 +28,17 @@ struct Point{
 void drawLine(Point start, int lenght, short direct, int symbolCode);
 void drawRect(Point topLeft, Point bottomRight);
 int SelectionMenu(string Index[], int number_Of_Items, int x0, int y0, int x1, int y1);//menu to input value for a factor was knew of triangle
-constexpr int ft = 14;
-constexpr int fm = 10;
+constexpr int ft = 14;		//numbers of factor
+constexpr int fm = 10;		//numbers of formula
 int matrix[ft][10] = {{0}};	//matrix ft-1 triangle's factor, 10 formula
 int factor[ft-1] = {0};		//we have ft-1 factors and 0 represent for a unknown factor, 1 reverse
 double value[ft-1] = {0};	//we have ft-1 factors each factor has its own value
 int savePosition[ft-1] = {0};	//save position of a factor which was found inorder
 int saveFormula[ft-1] = {0};	//save formula number of a factor which was found inorder
-string factorName[ft] = {		//make a menu for inputting
+string factorName[ft] = {	//make a menu for inputting
 	"Alpha", "Beta", "Delta", "a", "b", "c", "S", "hc", "p", "hb", "ha", "R", "r", "DONE"
 };
-enum pos{				//every factor should be assigned position corresponds
+enum pos{			//every factor should be assigned position corresponds
 	alpha = 1, beta = 2, delta = 3, a = 4, b = 5, c = 6, S = 7, hc = 8, p = 9, hb = 10, ha = 11, R = 12, r = 13
 };
 void InitAdjacencyMatrix();
